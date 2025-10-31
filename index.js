@@ -12,25 +12,42 @@ bot.on("message", (msg) => {
   const username = msg.chat.username;
 
   if (text == "/start") {
-      //   Xabar jo'natish
-      bot.sendMessage(
-        chat_id,
-        `Botimizga xush kelibsiz 😄, ${first_name} 
+    //   Xabar jo'natish
+    bot.sendMessage(
+      chat_id,
+      `Botimizga xush kelibsiz 😄, ${first_name} 
 yordam uchun /help buyruqini yuboring`
-      );
+    );
   } else if (text == "/help") {
     bot.sendMessage(
-        chat_id,
-        `Bizning botimiz sizga turli xil mavzulardan
+      chat_id,
+      `Bizning botimiz sizga turli xil mavzulardan
 quiz savol testlar bera o'ladi testni boshlash
 uchun /gamestart buyrukini yuboring ! `
     )
 
-  } 
-   else if (text == "/gamestart") {
-    bot.sendMessage(
-        chat_id,
-       `Quiz mavzusini tanlang ! \n\n Matematika ➡️ /math \n\n Tarix ➡️ /history \n\n Geografiya ➡️ /geography  \n\n Ingliz til ➡️ /english`
+  }
+
+  else if (text == "/gamestart") {
+
+    bot.sendMessage(chat_id, "Salom", {
+        reply_markup: {
+          keyboard: [
+            [
+              { text: `Ingliz tili test` },
+              { text: `Rus tili test` },
+              { text: `Matematika test` },
+              { text: `Geografiya test` },
+
+
+
+
+            ],
+          ],
+          resize_keyboard: true,
+        },
+
+      }
     )
 
   }
